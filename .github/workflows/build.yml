@@ -31,7 +31,7 @@ jobs:
 
       - name: Verificar salida
         run: ls -la dist
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

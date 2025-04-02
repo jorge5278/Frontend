@@ -25,7 +25,7 @@ Este proyecto es un sistema de dashboard y login para la empresa **Carnes ViBa**
    
 2. **Entrar a la carpeta**:
    ```bash
-    cd reactdemo
+    cd Frontend
 3. **Instalar dependencias**:
    ```bash
     npm install

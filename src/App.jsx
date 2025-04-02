@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
-import Home from "./components/home"; // Página de inicio
+import Home from "./components/home"; // Página de inici
 import Producto from "./components/producto";
 import Usuarios from "./components/usuarios"; 
 
-
+//test 
 function App() {
   return (
     <Router>

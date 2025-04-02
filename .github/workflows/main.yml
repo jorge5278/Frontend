@@ -2,9 +2,9 @@ name: CD pipeline Frontend
 
 on:
   workflow_run:
-    workflows: ["CI pipeline Frontend"]
+    workflows: ["Build and Test"]
     types:
-      -completed
+      - completed
 
 jobs:
   deploy:
@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Chekout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Dowload artifacts
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: dist-folder

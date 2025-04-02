@@ -1,0 +1,28 @@
+name: CD pipeline Frontend
+
+on:
+  workflow_run:
+    workflows: ["CI pipeline Frontend"]
+  types:
+    -completed
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-lates
+
+    steps:
+      - name: Chekout
+        uses: actions/checkout@v3
+
+      - name: Dowload artifacts
+        uses: actions/dowload-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
